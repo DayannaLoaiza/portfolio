@@ -1,0 +1,59 @@
+:root {
+  /* Colors */
+  --color-bg-primary: #0d1117;
+  --color-bg-secondary: #161b22;
+  --color-bg-tertiary: #21262d;
+  --color-border: #30363d;
+  --color-border-hover: rgba(0, 255, 200, 0.25);
+  --color-text-primary: #e6edf3;
+  --color-text-secondary: #c9d1d9;
+  --color-text-muted: #8b949e;
+  --color-accent: #00ffc8;
+  --color-accent-dim: rgba(0, 255, 200, 0.08);
+  --color-accent-border: rgba(0, 255, 200, 0.25);
+  --color-purple: #7b61ff;
+  --color-purple-dim: rgba(123, 97, 255, 0.1);
+  --color-amber: #ffbd2e;
+  --color-amber-dim: rgba(255, 189, 46, 0.1);
+  --color-red: #ff5f57;
+  --color-green: #28ca41;
+  --color-green-dim: rgba(40, 202, 65, 0.3);
+
+  /* Typography */
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+  --text-xs: 0.625rem;
+  --text-sm: 0.6875rem;
+  --text-base: 0.8125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 2rem;
+
+  /* Spacing */
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+  --radius-full: 20px;
+
+  /* Transitions */
+  --transition-fast: 180ms ease;
+  --transition-base: 250ms ease;
+  /* Shadows */
+  --shadow-card-hover: 0 4px 20px rgba(0, 0, 0, 0.25), 0 0 24px rgba(0, 255, 200, 0.07);
+  --shadow-glow: 0 0 20px rgba(0, 255, 200, 0.35);
+  --shadow-glow-sm: 0 0 8px rgba(0, 255, 200, 0.6);
+
+  /* Layout */
+  --sidebar-width: 52px;
+  --section-padding-x: 52px;
+  --section-padding-y: 48px;
+}

@@ -1,0 +1,43 @@
+.main-content {
+  margin-left: var(--sidebar-width);
+  position: relative;
+}
+
+/* Dot grid */
+.main-content::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  left: var(--sidebar-width);
+  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gradient orbs + vignette */
+.main-content::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  left: var(--sidebar-width);
+  background:
+    radial-gradient(ellipse 600px 500px at 15% 20%, rgba(0, 255, 200, 0.03) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 600px at 85% 60%, rgba(123, 97, 255, 0.025) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 350px at 50% 90%, rgba(0, 255, 200, 0.02) 0%, transparent 70%),
+    radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .main-content::before,
+  .main-content::after {
+    left: 0;
+  }
+}

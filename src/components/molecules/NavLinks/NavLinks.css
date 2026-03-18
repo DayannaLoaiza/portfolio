@@ -1,0 +1,22 @@
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links__item {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 200ms;
+  text-decoration: none;
+}
+
+.nav-links__item:hover {
+  color: var(--color-accent);
+}
+
+.nav-links__item--active {
+  color: var(--color-accent);
+}

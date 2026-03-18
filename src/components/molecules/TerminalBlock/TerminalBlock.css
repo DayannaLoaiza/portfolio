@@ -1,0 +1,86 @@
+.terminal {
+  background-color: var(--color-bg-secondary);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  width: 100%;
+  transition: border-color 260ms;
+}
+
+.terminal:hover {
+  border-color: rgba(0, 255, 200, 0.25);
+  box-shadow: 0 0 16px rgba(0, 255, 200, 0.05);
+}
+
+.terminal__bar {
+  background-color: var(--color-bg-tertiary);
+  padding: 7px 11px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.terminal__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.terminal__dot--red {
+  background-color: var(--color-red);
+}
+
+.terminal__dot--yellow {
+  background-color: var(--color-amber);
+}
+
+.terminal__dot--green {
+  background-color: var(--color-green);
+}
+
+.terminal__title {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--color-text-muted);
+  margin-left: 5px;
+}
+
+.terminal__body {
+  padding: 11px 14px 13px;
+}
+
+.terminal__line {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.9;
+  opacity: 0;
+}
+
+.terminal__line--visible {
+  opacity: 1;
+}
+
+.terminal__prompt {
+  color: var(--color-accent);
+}
+
+.terminal__cmd {
+  color: #79c0ff;
+}
+
+.terminal__output {
+  color: var(--color-text-primary);
+  margin-left: 14px;
+  display: inline-block;
+}
+
+.terminal__cursor {
+  display: inline-block;
+  width: 7px;
+  height: 11px;
+  background-color: var(--color-accent);
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}

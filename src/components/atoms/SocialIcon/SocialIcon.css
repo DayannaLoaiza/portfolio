@@ -1,0 +1,44 @@
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-secondary);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: all 220ms ease;
+}
+
+.social-icon--sm {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-lg);
+}
+
+.social-icon--sm svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--color-text-muted);
+}
+
+.social-icon--md {
+  width: 44px;
+  height: 44px;
+}
+
+.social-icon--md svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-text-muted);
+  transition: fill 200ms;
+}
+
+.social-icon:hover {
+  border-color: rgba(0, 255, 200, 0.35);
+  box-shadow: 0 0 14px rgba(0, 255, 200, 0.12);
+  background-color: var(--color-bg-tertiary);
+}
+
+.social-icon:hover svg {
+  fill: var(--color-accent);
+}

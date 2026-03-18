@@ -1,0 +1,120 @@
+.cert-card {
+  background: var(--color-bg-secondary);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: default;
+  display: flex;
+  transition: border-color 260ms, box-shadow 260ms, transform 260ms;
+}
+
+.cert-card:hover {
+  border-color: rgba(var(--lc), 0.35);
+  box-shadow: 0 0 16px rgba(var(--lc), 0.07), 0 3px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ── Color strip ── */
+
+.cert-card__strip {
+  width: 3px;
+  flex-shrink: 0;
+  background: rgb(var(--lc));
+  opacity: 0.6;
+  transition: opacity 260ms;
+}
+
+.cert-card:hover .cert-card__strip {
+  opacity: 1;
+}
+
+/* ── Inner layout ── */
+
+.cert-card__inner {
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+/* ── Logo ── */
+
+.cert-card__logo {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-lg);
+  background: rgba(var(--lc), 0.1);
+  border: 0.5px solid rgba(var(--lc), 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 260ms;
+}
+
+.cert-card:hover .cert-card__logo {
+  background: rgba(var(--lc), 0.18);
+  box-shadow: 0 0 10px rgba(var(--lc), 0.15);
+}
+
+.cert-card__logo svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Info ── */
+
+.cert-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cert-card__name {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: 3px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cert-card__meta {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cert-card__sep {
+  color: var(--color-border);
+}
+
+.cert-card__year {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-border);
+}
+
+/* ── Badge ── */
+
+.cert-card__badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  background: rgba(var(--lc), 0.08);
+  color: rgb(var(--lc));
+  border: 0.5px solid rgba(var(--lc), 0.2);
+  transition: all 260ms;
+}
+
+.cert-card:hover .cert-card__badge {
+  background: rgba(var(--lc), 0.16);
+  border-color: rgba(var(--lc), 0.4);
+}

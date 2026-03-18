@@ -1,0 +1,17 @@
+export const techNames: Record<string, string> = {
+  nextjs: "Next.js",
+  typescript: "TypeScript",
+  nodejs: "Node.js",
+  azure: "Azure",
+  docker: "Docker",
+  postgresql: "PostgreSQL",
+  react: "React",
+  aws: "AWS EC2",
+  supabase: "Supabase",
+  figma: "Figma",
+  git: "Git",
+  express: "Express",
+  nestjs: "NestJS",
+  css3: "CSS3",
+  tailwind: "Tailwind CSS",
+};

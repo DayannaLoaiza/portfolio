@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Portfolio Wesbite by Linda Dayanna Loaiza
 
-## Getting Started
+Portafolio web profesional de **Linda Loaiza**.
 
-First, run the development server:
+Sitio single-page con dark theme estilo terminal/GitHub, construido con enfoque en **SEO**, **rendimiento** y **accesibilidad**.
+
+## Stack Tecnologico
+
+| Capa | Tecnologia |
+|------|-----------|
+| Framework | Next.js (App Router, SSG) |
+| Lenguaje | TypeScript (strict mode) |
+| Estilos | CSS puro + BEM + Custom Properties |
+| Fuentes | JetBrains Mono + Inter (next/font, self-hosted) |
+| Animaciones | CSS Keyframes + IntersectionObserver |
+| Iconos | SVG inline |
+
+## Inicio Rapido
 
 ```bash
+# Instalar dependencias
+npm install
+
+# Servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build de produccion
+npm run build
+
+# Servir build local
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estructura del Proyecto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx          # Root layout: fuentes, metadata, JSON-LD
+│   ├── page.tsx            # Composicion de todas las secciones
+│   ├── sitemap.ts          # Sitemap auto-generado
+│   ├── robots.ts           # robots.txt auto-generado
+│   └── not-found.tsx       # Pagina 404
+│
+├── components/             # Atomic Design
+│   ├── atoms/              # Badge, Button, Tag, SocialIcon, SectionTitle
+│   ├── molecules/          # ProjectCard, TerminalBlock, ExperienceEntry, SkillCard, etc.
+│   └── organisms/          # HeroSection, ProjectsSection, SkillsSection, Footer, etc.
+│
+├── data/                   # Contenido estatico tipado
+│   ├── projects.ts         # Proyectos destacados
+│   ├── skills.ts           # Categorias de habilidades
+│   ├── experience.ts       # Experiencia laboral
+│   ├── certifications.ts   # Certificaciones
+│   ├── achievements.ts     # Logros
+│   └── social.ts           # Redes sociales, links de navegacion, lineas del terminal
+│
+├── types/                  # Interfaces TypeScript
+├── hooks/                  # useTypewriter, useInView
+├── lib/                    # JSON-LD structured data
+│
+└── styles/                 # CSS Global
+    ├── tokens.css          # Design tokens (colores, tipografia, spacing)
+    ├── reset.css           # CSS reset moderno
+    ├── global.css          # Estilos base del body
+    ├── utilities.css       # Clases utilitarias (sr-only, skip-link)
+    └── animations.css      # Keyframes compartidos
+```
 
-## Learn More
+## Arquitectura
 
-To learn more about Next.js, take a look at the following resources:
+### Atomic Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Los componentes siguen Atomic Design con archivos CSS BEM co-ubicados:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Atoms**: Componentes minimos reutilizables (Badge, Button, Tag)
+- **Molecules**: Combinaciones de atoms (ProjectCard, TerminalBlock, ExperienceEntry)
+- **Organisms**: Secciones completas de la pagina (HeroSection, ProjectsSection, Footer)
 
-## Deploy on Vercel
+### CSS — BEM + Design Tokens
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+CSS puro con metodologia BEM para nomenclatura modular y sin conflictos de especificidad:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```css
+.project-card { }                /* Bloque */
+.project-card__title { }         /* Elemento */
+.project-card--featured { }      /* Modificador */
+.project-card.is-visible { }     /* Estado */
+```
+
+Todos los valores de diseno estan centralizados como CSS Custom Properties en `tokens.css`.
+
+### Rendimiento
+
+- **SSG**: HTML completo pre-renderizado en build time
+- **Server Components por defecto**: Solo 3 componentes envian JS al cliente
+- **next/font**: Fuentes self-hosted, zero CLS
+- **CSS puro**: Sin runtime de estilos, extraido y minificado automaticamente
+
+### SEO
+
+- Metadata completa: Open Graph, Twitter Cards, keywords
+- JSON-LD structured data (Person + WebSite schemas)
+- Sitemap y robots.txt auto-generados
+- HTML semantico con ARIA labels y heading hierarchy correcta
+- Skip-to-content link para accesibilidad
+
+## Secciones
+
+| Seccion | Descripcion |
+|---------|------------|
+| **Hero** | Terminal animado con typing effect, badge "Available for Remote", CTAs |
+| **Projects** | Proyecto destacado con browser mockup + grid 2x2 de proyectos |
+| **Skills** | Bento grid de categorias + marquee de tecnologias |
+| **Experience** | Timeline con scroll-reveal animations |
+| **Certifications** | Cards de certificaciones profesionales |
+| **Achievements** | Cards de logros con acentos de color |
+| **Contact** | CTA de email + iconos sociales |
+| **Footer** | GitHub activity strip + creditos |
+
+## Modificar Contenido
+
+Todo el contenido esta en `src/data/`. Para agregar un proyecto, certificacion o experiencia, editar el archivo correspondiente. Los tipos en `src/types/` guian la estructura.
+
+## Principios
+
+- **SOLID** — Responsabilidad unica por componente, datos inyectados via props
+- **DRY** — Componentes reutilizables (Tag, Badge, SocialIcon usados en multiples secciones)
+- **Clean Code** — Nombres descriptivos, archivos pequenos y enfocados
+- **BEM** — Nomenclatura CSS modular, predecible y sin conflictos
+
+## Deploy
+
+El sitio esta optimizado para deploy en **Vercel**:
+
+```bash
+# Build de produccion
+npm run build
+```
+
+Conectar el repositorio en [vercel.com](https://vercel.com) para deploys automaticos.
+
+## Licencia
+
+Proyecto personal de Linda Loaiza. Todos los derechos reservados.

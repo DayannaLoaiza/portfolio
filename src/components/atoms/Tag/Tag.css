@@ -1,0 +1,64 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-muted);
+  border: 0.5px solid var(--color-border);
+  cursor: default;
+  transition: filter var(--transition-fast), transform var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tag__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.tag__icon svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.tag--sm {
+  font-size: var(--text-xs);
+  padding: 2px 8px;
+}
+
+.tag--md {
+  font-size: var(--text-sm);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border-color: transparent;
+}
+
+.tag--md:hover {
+  filter: brightness(1.2);
+  transform: scale(1.04);
+}
+
+/* Technology color variants */
+.tag--react { background-color: rgba(97, 218, 251, 0.1); color: #61dafb; border-color: rgba(97, 218, 251, 0.2); }
+.tag--next { background-color: rgba(255, 255, 255, 0.07); color: #e6edf3; border-color: rgba(255, 255, 255, 0.15); }
+.tag--ts { background-color: rgba(49, 120, 198, 0.15); color: #3178c6; border-color: rgba(49, 120, 198, 0.25); }
+.tag--tailwind { background-color: rgba(56, 189, 248, 0.1); color: #38bdf8; border-color: rgba(56, 189, 248, 0.2); }
+.tag--figma { background-color: rgba(162, 89, 255, 0.1); color: #a259ff; border-color: rgba(162, 89, 255, 0.2); }
+.tag--node { background-color: rgba(104, 160, 99, 0.15); color: #68a063; border-color: rgba(104, 160, 99, 0.25); }
+.tag--express { background-color: rgba(255, 255, 255, 0.06); color: #8b949e; border-color: rgba(255, 255, 255, 0.1); }
+.tag--pg { background-color: rgba(51, 103, 145, 0.15); color: #336791; border-color: rgba(51, 103, 145, 0.25); }
+.tag--supabase { background-color: rgba(62, 207, 142, 0.1); color: #3ecf8e; border-color: rgba(62, 207, 142, 0.2); }
+.tag--rest { background-color: var(--color-accent-dim); color: var(--color-accent); border-color: rgba(0, 255, 200, 0.2); }
+.tag--docker { background-color: rgba(30, 166, 220, 0.1); color: #1ea6dc; border-color: rgba(30, 166, 220, 0.2); }
+.tag--azure { background-color: rgba(0, 120, 212, 0.12); color: #0078d4; border-color: rgba(0, 120, 212, 0.2); }
+.tag--aws { background-color: rgba(255, 153, 0, 0.1); color: #ff9900; border-color: rgba(255, 153, 0, 0.2); }
+.tag--git { background-color: rgba(240, 80, 50, 0.1); color: #f05032; border-color: rgba(240, 80, 50, 0.2); }
+.tag--ci { background-color: var(--color-purple-dim); color: var(--color-purple); border-color: rgba(123, 97, 255, 0.2); }
+.tag--agile { background-color: var(--color-accent-dim); color: var(--color-accent); border-color: rgba(0, 255, 200, 0.2); }
+.tag--solid { background-color: var(--color-purple-dim); color: var(--color-purple); border-color: rgba(123, 97, 255, 0.2); }
+.tag--atomic { background-color: var(--color-amber-dim); color: var(--color-amber); border-color: rgba(255, 189, 46, 0.2); }
+.tag--sso { background-color: rgba(240, 80, 50, 0.1); color: #f05032; border-color: rgba(240, 80, 50, 0.2); }
+.tag--clean { background-color: rgba(104, 160, 99, 0.1); color: #68a063; border-color: rgba(104, 160, 99, 0.2); }
