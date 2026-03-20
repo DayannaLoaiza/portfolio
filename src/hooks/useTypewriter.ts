@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import { TerminalLine } from "@/types/common";
 
 interface UseTypewriterOptions {
@@ -15,88 +15,109 @@ interface TypewriterState {
   isComplete: boolean;
 }
 
+function getReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function subscribeReducedMotion(callback: () => void) {
+  const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mql.addEventListener("change", callback);
+  return () => mql.removeEventListener("change", callback);
+}
+
 export function useTypewriter({
   lines,
   typingSpeed = 130,
   lineDelay = 550,
   startDelay = 900,
 }: UseTypewriterOptions): TypewriterState {
+  const prefersReducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotion,
+    () => false
+  );
+
   const [visibleLines, setVisibleLines] = useState<
     TypewriterState["visibleLines"]
-  >([]);
-  const [isComplete, setIsComplete] = useState(false);
-
-  const animate = useCallback(async () => {
-    const sleep = (ms: number) =>
-      new Promise((resolve) => setTimeout(resolve, ms));
-
-    await sleep(startDelay);
-
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-
-      if (line.type === "cmd") {
-        setVisibleLines((prev) => [
-          ...prev,
-          { text: "", type: "cmd", complete: false },
-        ]);
-
-        for (let c = 0; c < line.text.length; c++) {
-          const charIndex = c;
-          setVisibleLines((prev) => {
-            const updated = [...prev];
-            updated[updated.length - 1] = {
-              ...updated[updated.length - 1],
-              text: line.text.slice(0, charIndex + 1),
-            };
-            return updated;
-          });
-          await sleep(typingSpeed + Math.random() * 30);
-        }
-
-        setVisibleLines((prev) => {
-          const updated = [...prev];
-          updated[updated.length - 1] = {
-            ...updated[updated.length - 1],
-            complete: true,
-          };
-          return updated;
-        });
-
-        await sleep(lineDelay);
-      } else {
-        setVisibleLines((prev) => [
-          ...prev,
-          { text: line.text, type: "out", complete: true },
-        ]);
-        await sleep(120);
-      }
-
-      await sleep(i % 2 === 0 ? 100 : 60);
-    }
-
-    setIsComplete(true);
-  }, [lines, typingSpeed, lineDelay, startDelay]);
-
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (prefersReducedMotion) {
-      setVisibleLines(
-        lines.map((line) => ({
+  >(() =>
+    prefersReducedMotion
+      ? lines.map((line) => ({
           text: line.text,
           type: line.type,
           complete: true,
         }))
-      );
-      setIsComplete(true);
+      : []
+  );
+  const [isComplete, setIsComplete] = useState(prefersReducedMotion);
+  const abortRef = useRef(false);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
       return;
     }
 
-    animate();
-  }, [animate, lines]);
+    abortRef.current = false;
+
+    const sleep = (ms: number) =>
+      new Promise<void>((resolve) => {
+        const id = setTimeout(resolve, ms);
+        if (abortRef.current) clearTimeout(id);
+      });
+
+    const linesBuffer: TypewriterState["visibleLines"] = [];
+    let rafId = 0;
+
+    const flushToState = () => {
+      rafId = requestAnimationFrame(() => {
+        setVisibleLines([...linesBuffer]);
+      });
+    };
+
+    (async () => {
+      await sleep(startDelay);
+      if (abortRef.current) return;
+
+      for (let i = 0; i < lines.length; i++) {
+        if (abortRef.current) return;
+        const line = lines[i];
+
+        if (line.type === "cmd") {
+          linesBuffer.push({ text: "", type: "cmd", complete: false });
+          flushToState();
+
+          for (let c = 0; c < line.text.length; c++) {
+            if (abortRef.current) return;
+            linesBuffer[linesBuffer.length - 1] = {
+              ...linesBuffer[linesBuffer.length - 1],
+              text: line.text.slice(0, c + 1),
+            };
+            flushToState();
+            await sleep(typingSpeed + Math.random() * 30);
+          }
+
+          linesBuffer[linesBuffer.length - 1] = {
+            ...linesBuffer[linesBuffer.length - 1],
+            complete: true,
+          };
+          flushToState();
+          await sleep(lineDelay);
+        } else {
+          linesBuffer.push({ text: line.text, type: "out", complete: true });
+          flushToState();
+          await sleep(120);
+        }
+
+        await sleep(i % 2 === 0 ? 100 : 60);
+      }
+
+      if (!abortRef.current) setIsComplete(true);
+    })();
+
+    return () => {
+      abortRef.current = true;
+      cancelAnimationFrame(rafId);
+    };
+  }, [lines, typingSpeed, lineDelay, startDelay, prefersReducedMotion]);
 
   return { visibleLines, isComplete };
 }

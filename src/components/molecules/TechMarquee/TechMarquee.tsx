@@ -2,7 +2,7 @@ import { marqueeItems } from "@/data/skills";
 import "./TechMarquee.css";
 
 export function TechMarquee() {
-  const doubled = [...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems];
+  const doubled = [...marqueeItems, ...marqueeItems];
 
   return (
     <div className="tech-marquee" aria-hidden="true">

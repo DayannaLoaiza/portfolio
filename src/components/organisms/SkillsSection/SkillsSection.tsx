@@ -1,4 +1,5 @@
 import { SectionTitle } from "@/components/atoms/SectionTitle/SectionTitle";
+import { ConstellationStrip } from "@/components/molecules/ConstellationStrip/ConstellationStrip";
 import { LogoChip } from "@/components/molecules/LogoChip/LogoChip";
 import { TechMarquee } from "@/components/molecules/TechMarquee/TechMarquee";
 import { skillCategories } from "@/data/skills";
@@ -10,7 +11,7 @@ export function SkillsSection() {
     <section id="skills" className="skills-section" aria-labelledby="skills-title">
       <SectionTitle id="skills-title" title="Skills" />
 
-      <div className="constellation-strip">
+      <ConstellationStrip>
         {skillCategories.map((category) => (
           <div
             key={category.name}
@@ -45,7 +46,7 @@ export function SkillsSection() {
             </div>
           </div>
         ))}
-      </div>
+      </ConstellationStrip>
 
       <TechMarquee />
     </section>

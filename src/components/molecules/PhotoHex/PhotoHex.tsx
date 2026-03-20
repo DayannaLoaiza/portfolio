@@ -32,7 +32,7 @@ export function PhotoHex() {
         <div className="photo-hex__clip">
           <div className="photo-hex__photo">
             <Image
-              src="/og-image.png"
+              src="/og-image.webp"
               alt="Linda Loaiza"
               width={176}
               height={194}
