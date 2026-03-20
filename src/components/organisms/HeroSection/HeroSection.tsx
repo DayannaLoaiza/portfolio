@@ -33,7 +33,7 @@ export function HeroSection() {
               Construyo productos digitales de nueva generaci&oacute;n
             </span>
             <span className="hero-section__tagline-bottom">
-              donde el <span className="hero-section__tagline-highlight">c&oacute;digo elegante</span>, el <span className="hero-section__tagline-highlight">dise&ntilde;o inteligente</span> y la <span className="hero-section__tagline-highlight">automatizaci&oacute;n</span> convergen.
+              donde el <span className="hero-section__tagline-highlight">c&oacute;digo limpio</span>, el <span className="hero-section__tagline-highlight">dise&ntilde;o inteligente</span> y la <span className="hero-section__tagline-highlight">automatizaci&oacute;n</span> convergen.
             </span>
           </div>
 

@@ -17,8 +17,8 @@ interface TypewriterState {
 
 export function useTypewriter({
   lines,
-  typingSpeed = 65,
-  lineDelay = 280,
+  typingSpeed = 130,
+  lineDelay = 550,
   startDelay = 900,
 }: UseTypewriterOptions): TypewriterState {
   const [visibleLines, setVisibleLines] = useState<

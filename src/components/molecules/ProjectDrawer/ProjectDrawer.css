@@ -23,7 +23,7 @@
 .project-drawer__close {
   font-family: var(--font-mono);
   font-size: 9px;
-  color: var(--color-border);
+  color: var(--color-text-muted);
   cursor: pointer;
   width: 22px;
   height: 22px;
@@ -191,7 +191,7 @@
 .project-drawer__metric-label {
   font-family: var(--font-mono);
   font-size: 8px;
-  color: var(--color-border);
+  color: var(--color-text-muted);
 }
 
 /* ── Description ── */
