@@ -13,11 +13,6 @@ export function ContactSection() {
       <p className="contact-section__sub">
         Si quieres mejorar un proyecto, tienes una oportunidad de trabajo o simplemente quieres saludar, no dudes en contactarme.
       </p>
-      <div>
-        <a className="contact-section__email" href="mailto:lindadayannaloaiza@gmail.com">
-          lindadayannaloaiza@gmail.com
-        </a>
-      </div>
       <div className="contact-section__social">
         {socialLinks.map((link) => (
           <SocialIcon key={link.name} type={link.icon} href={link.url} title={link.name} />

@@ -12,6 +12,13 @@
   transform: translateX(0);
 }
 
+/* Los drawers no seleccionados siguen en el DOM (y por tanto en el HTML
+   pre-renderizado, que es lo que leen los buscadores y los ATS), pero no se
+   pintan ni entran al arbol de accesibilidad. */
+.project-drawer__inner--inactive {
+  display: none;
+}
+
 /* ── Close button ── */
 
 .project-drawer__close-row {
@@ -21,6 +28,7 @@
 }
 
 .project-drawer__close {
+  position: relative;
   font-family: var(--font-mono);
   font-size: 9px;
   color: var(--color-text-muted);
@@ -35,6 +43,13 @@
   justify-content: center;
   transition: all 220ms;
   line-height: 1;
+}
+
+/* El circulo mide 22px; esto lleva el area tactil a 44px sin cambiar el aspecto. */
+.project-drawer__close::after {
+  content: "";
+  position: absolute;
+  inset: -11px;
 }
 
 .project-drawer__close:hover {
@@ -323,4 +338,31 @@
 .project-drawer__link--secondary:hover {
   color: var(--color-text-primary);
   border-color: var(--color-text-muted);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  /* De 64px de padding lateral fijo a 32px: recupera ancho para las metricas. */
+  .project-drawer__inner {
+    padding: 16px 16px 28px;
+  }
+
+  .project-drawer__title {
+    font-size: 18px;
+  }
+
+  /* Se mantienen las 3 columnas; con menos padding la celda pasa de 48 a ~63px
+     utiles y la etiqueta envuelve en vez de desbordar. */
+  .project-drawer__metric {
+    padding: 8px;
+  }
+
+  .project-drawer__metric-label {
+    overflow-wrap: anywhere;
+  }
+
+  .project-drawer__links {
+    flex-wrap: wrap;
+  }
 }

@@ -54,17 +54,21 @@
     padding: var(--space-8) var(--space-4) 0;
   }
 
+  /* Acordeon: se disuelven los dos contenedores para que filas y drawers sean
+     hermanos, y el `order` inline de cada componente los intercala. Asi el
+     detalle se abre bajo su propia fila sin duplicar nada en el DOM. */
   .projects-section__body {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     min-height: auto;
   }
 
-  .projects-section__body--open {
-    grid-template-columns: 1fr;
+  .projects-section__list,
+  .projects-section__drawer {
+    display: contents;
   }
 
-  .projects-section__drawer {
-    opacity: 1;
+  .project-drawer__inner {
     border-top: 0.5px solid var(--color-bg-tertiary);
   }
 }

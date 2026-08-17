@@ -147,10 +147,68 @@
 }
 
 @media (max-width: 768px) {
+  /* Sin altura forzada: con `min-height: 100vh` el contenido queda centrado y
+     el sobrante se reparte como espacio muerto arriba y abajo. En movil el
+     hero mide exactamente lo que mide su contenido. */
+  .hero-section,
   .hero-section__grid {
-    grid-template-columns: 1fr;
-    padding: var(--space-8) var(--space-4);
-    gap: var(--space-8);
+    min-height: auto;
+  }
+
+  /* La foto pasa a ser un avatar a la izquierda del badge y el nombre. Para
+     poder alinearla solo con esos dos se disuelve __text con `display:contents`
+     y se colocan sus hijos directamente en el grid. */
+  .hero-section__grid {
+    grid-template-columns: auto 1fr;
+    /* La fila de 20px reproduce el gap que tenia .hero-section__text. */
+    gap: 20px 16px;
+    align-items: start;
+    /* El menu va en position:absolute a top:16px y mide ~16px de alto, asi que
+       termina sobre los 32px. 48px arriba deja aire entre el y el badge. */
+    padding: var(--space-12) var(--space-4) var(--space-8);
+  }
+
+  .hero-section__text {
+    display: contents;
+  }
+
+  /* El badge ocupa su propia linea al borde izquierdo (es `width: fit-content`,
+     asi que sigue siendo una pildora). La foto arranca en el borde superior del
+     nombre, no flotando entre las dos filas. */
+  .hero-section__badge {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .photo-hex {
+    --hex-w: 80px;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  .hero-section__name-block {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* `display:contents` solo altera el arbol de cajas, no el DOM: .terminal
+     sigue siendo descendiente de __text, asi que no vale el selector hijo. */
+  .hero-section__tagline,
+  .hero-section__grid .terminal,
+  .hero-section__cta {
+    grid-column: 1 / -1;
+  }
+
+  /* La animacion vivia en __text; al quedarse sin caja hay que pasarla a los
+     hijos o el bloque apareceria de golpe. */
+  .hero-section__badge,
+  .hero-section__name-block,
+  .hero-section__tagline,
+  .hero-section__grid .terminal,
+  .hero-section__cta {
+    opacity: 0;
+    animation: fade-right 0.65s ease 0.25s forwards;
   }
 
   .hero-section__glow {

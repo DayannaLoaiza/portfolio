@@ -15,28 +15,6 @@ const icons: Record<string, ReactNode> = {
       <path fill="#58C4DC" d="M569,256 C569,213.2 529.3,175.7 466.3,151 C467.1,145.4 467.9,139.9 468.4,134.5 C474.6,73 459.8,28.7 426.7,9.6 C389.7,-11.8 337.4,3.7 284.5,46 C231.6,3.7 179.3,-11.8 142.3,9.6 C109.2,28.7 94.3,73 100.6,134.5 C101.1,139.9 101.8,145.4 102.7,151 C97.4,153 92.3,155.2 87.3,157.4 C31,182.7 0,217.8 0,256 C0,298.8 39.6,336.3 102.7,361 C101.8,366.6 101.1,372.1 100.6,377.5 C94.3,439 109.2,483.3 142.3,502.4 C153.6,508.9 166.5,512.2 179.6,512 C211,512 247.6,495.5 284.5,466 C321.4,495.5 358,512 389.4,512 C402.5,512.2 415.4,508.9 426.8,502.4 C459.8,483.3 474.7,439 468.4,377.5 C467.9,372.1 467.1,366.6 466.3,361 C529.4,336.3 569,298.8 569,256 M389.2,27.1 C397.6,26.9 405.9,28.9 413.2,33 C436.2,46.3 446.5,82.3 441.5,131.8 C441.2,135.1 440.8,138.6 440.3,142 C414.1,134.1 387.2,128.5 360,125.1 C343.5,103.2 325.2,82.8 305.2,64 C336.6,39.7 366,27.1 389.2,27.1 M378.4,310.2 C368.2,327.8 357.2,344.9 345.2,361.4 C325,363.5 304.8,364.5 284.5,364.5 C264.2,364.5 243.9,363.5 223.7,361.4 C211.8,344.9 200.8,327.8 190.7,310.2 C180.5,292.6 171.3,274.5 163,256 C171.3,237.5 180.5,219.4 190.7,201.8 C200.8,184.2 211.8,167.2 223.6,150.8 C243.8,148.6 264.1,147.6 284.5,147.6 C304.8,147.6 325.1,148.6 345.2,150.7 C357.1,167.1 368.1,184.2 378.3,201.8 C388.4,219.4 397.6,237.5 405.9,256 C397.6,274.5 388.4,292.6 378.3,310.2 M419.7,290.1 C426.1,307.5 431.3,325.3 435.4,343.3 C417.8,348.8 399.8,353.1 381.7,356.3 C388.6,345.9 395.3,335 401.7,323.8 C408.1,312.7 414.1,301.4 419.8,290.2 M246.4,390.4 C258.8,391.1 271.6,391.6 284.5,391.6 C297.4,391.6 310.2,391.1 322.7,390.4 C310.9,404.6 298.1,418 284.5,430.5 C270.9,418 258.2,404.6 246.4,390.4 Z M187.3,356.2 C169.1,353.1 151.2,348.8 133.6,343.3 C137.6,325.3 142.8,307.6 149.2,290.2 C154.8,301.4 160.7,312.7 167.2,323.8 C173.7,334.9 180.5,345.9 187.3,356.3 M149.2,221.8 C142.9,204.5 137.7,186.8 133.6,168.8 C151.2,163.4 169.1,159 187.2,155.8 C180.3,166.2 173.6,187 167.1,188.2 C160.7,199.4 154.7,210.5 149.1,221.8 M322.6,121.6 C310.1,120.8 297.4,120.4 284.4,120.4 C271.5,120.4 258.8,120.8 246.2,121.6 C258.1,107.4 270.8,94 284.4,81.4 C298,94 310.8,107.4 322.6,121.6 Z M401.7,188.2 C395.2,176.9 388.5,166.1 381.5,155.7 C399.7,158.8 417.7,163.2 435.4,168.7 C431.3,186.7 426.1,204.4 419.8,221.8 C414.2,210.6 408.2,199.3 401.7,188.2 M127.5,131.8 C122.4,82.3 132.8,46.3 155.8,33 C163.1,29 171.5,26.9 179.9,27.1 C203,27.1 232.4,39.7 263.8,64 C243.8,82.8 225.4,103.3 209,125.2 C181.8,128.5 154.9,134.1 128.7,142 C128.2,138.6 127.8,135.2 127.5,131.8 M98.5,182.1 C101.5,180.8 104.7,179.4 107.9,178.1 C114.2,204.7 122.8,230.8 133.5,256 C122.8,281.2 114.2,307.4 107.9,334.1 C56.7,313.1 27.1,284 27.1,256 C27.1,229.5 53.2,202.5 98.5,182.1 Z M155.8,479 C132.8,465.7 122.4,429.7 127.5,380.2 C127.8,376.8 128.3,373.4 128.7,370 C155,377.9 181.8,383.5 209,386.8 C225.5,408.8 243.8,429.2 263.8,448 C220.1,481.8 180.1,493 155.8,479 M441.5,380.2 C446.5,429.7 436.2,465.7 413.2,479 C389,493 349,481.8 305.3,448 C325.2,429.2 343.6,408.8 360.1,386.8 C387.2,383.5 414.1,377.9 440.3,370 C440.8,373.4 441.2,376.8 441.6,380.2 M461.2,334 C454.9,307.3 446.3,281.2 435.6,256 C446.3,230.7 454.9,204.6 461.2,177.9 C512.2,198.9 541.9,228 541.9,256 C541.9,284 512.3,313.1 461.2,334"/>
     </svg>
   ),
-  "Next.js": (
-    <svg viewBox="0 0 180 180" aria-hidden="true">
-      <mask height="180" id="nextjs__mask0" maskUnits="userSpaceOnUse" width="180" x="0" y="0" style={{ maskType: "alpha" }}>
-        <circle cx="90" cy="90" fill="black" r="90"/>
-      </mask>
-      <g mask="url(#nextjs__mask0)">
-        <circle cx="90" cy="90" fill="black" r="90"/>
-        <path d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z" fill="url(#nextjs__paint0)"/>
-        <rect fill="url(#nextjs__paint1)" height="72" width="12" x="115" y="54"/>
-      </g>
-      <defs>
-        <linearGradient gradientUnits="userSpaceOnUse" id="nextjs__paint0" x1="109" x2="144.5" y1="116.5" y2="160.5">
-          <stop stopColor="white"/>
-          <stop offset="1" stopColor="white" stopOpacity="0"/>
-        </linearGradient>
-        <linearGradient gradientUnits="userSpaceOnUse" id="nextjs__paint1" x1="121" x2="120.799" y1="54" y2="106.875">
-          <stop stopColor="white"/>
-          <stop offset="1" stopColor="white" stopOpacity="0"/>
-        </linearGradient>
-      </defs>
-    </svg>
-  ),
   TypeScript: (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.1 5.1 0 0 0-.717-.26 5.45 5.45 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.89.89 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.03 3.03 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.92 9.92 0 0 1-1.84-.164 5.54 5.54 0 0 1-1.512-.493v-2.63a5.03 5.03 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.02 1.02 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.6 5.6 0 0 0-.807-.444 28 28 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.49 4.49 0 0 1 1.47-.629 7.54 7.54 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z" fill="currentColor"/>
@@ -50,34 +28,6 @@ const icons: Record<string, ReactNode> = {
   Figma: (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.354-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.02c0 1.689 1.38 3.068 3.044 3.068a3.07 3.07 0 0 0 3.091-3.068V16.49H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.354 3.02 3.019 3.02h.098c1.665 0 3.019-1.355 3.019-3.02a3.023 3.023 0 0 0-3.019-3.019h-.098z" fill="currentColor"/>
-    </svg>
-  ),
-  "Node.js": (
-    <svg viewBox="0 0 256 292" aria-hidden="true">
-      <defs>
-        <linearGradient id="nodejs__a" x1="68.188%" x2="27.823%" y1="17.487%" y2="89.755%">
-          <stop offset="0%" stopColor="#41873F"/>
-          <stop offset="32.88%" stopColor="#418B3D"/>
-          <stop offset="63.52%" stopColor="#419637"/>
-          <stop offset="93.19%" stopColor="#3FA92D"/>
-          <stop offset="100%" stopColor="#3FAE2A"/>
-        </linearGradient>
-        <linearGradient id="nodejs__c" x1="43.277%" x2="159.245%" y1="55.169%" y2="-18.306%">
-          <stop offset="13.76%" stopColor="#41873F"/>
-          <stop offset="40.32%" stopColor="#54A044"/>
-          <stop offset="71.36%" stopColor="#66B848"/>
-          <stop offset="90.81%" stopColor="#6CC04A"/>
-        </linearGradient>
-        <linearGradient id="nodejs__f" x1="-4.389%" x2="101.499%" y1="49.997%" y2="49.997%">
-          <stop offset="9.192%" stopColor="#6CC04A"/>
-          <stop offset="28.64%" stopColor="#66B848"/>
-          <stop offset="59.68%" stopColor="#54A044"/>
-          <stop offset="86.24%" stopColor="#41873F"/>
-        </linearGradient>
-      </defs>
-      <path fill="url(#nodejs__a)" d="M134.923 1.832c-4.344-2.443-9.502-2.443-13.846 0L6.787 67.801C2.443 70.244 0 74.859 0 79.745v132.208c0 4.887 2.715 9.502 6.787 11.945l114.29 65.968c4.344 2.444 9.502 2.444 13.846 0l114.29-65.968c4.344-2.443 6.787-7.058 6.787-11.945V79.745c0-4.886-2.715-9.501-6.787-11.944L134.923 1.832Z"/>
-      <path fill="url(#nodejs__c)" d="M249.485 67.8 134.65 1.833c-1.086-.542-2.443-1.085-3.529-1.357L2.443 220.912c1.086 1.357 2.444 2.443 3.8 3.258l114.834 65.968c3.258 1.9 7.059 2.443 10.588 1.357L252.47 70.515c-.815-1.086-1.9-1.9-2.986-2.714Z"/>
-      <path fill="url(#nodejs__f)" d="M249.756 223.898c3.258-1.9 5.701-5.158 6.787-8.687L130.579.204c-3.258-.543-6.787-.272-9.773 1.628L6.786 67.53l122.979 224.238c1.628-.272 3.529-.815 5.158-1.63l114.833-66.239Z"/>
     </svg>
   ),
   Express: (
@@ -121,31 +71,6 @@ const icons: Record<string, ReactNode> = {
   Docker: (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.186m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.185-.186h-2.119a.185.185 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 0 0-.75.748 11.376 11.376 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 0 0 3.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z" fill="currentColor"/>
-    </svg>
-  ),
-  Azure: (
-    <svg viewBox="0 0 96 96" aria-hidden="true">
-      <defs>
-        <linearGradient id="azure__a" x1="-1032.17" x2="-1059.21" y1="145.31" y2="65.43" gradientTransform="matrix(1 0 0 -1 1075 158)" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#114a8b"/>
-          <stop offset="1" stopColor="#0669bc"/>
-        </linearGradient>
-        <linearGradient id="azure__b" x1="-1023.73" x2="-1029.98" y1="108.08" y2="105.97" gradientTransform="matrix(1 0 0 -1 1075 158)" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopOpacity=".3"/>
-          <stop offset=".07" stopOpacity=".2"/>
-          <stop offset=".32" stopOpacity=".1"/>
-          <stop offset=".62" stopOpacity=".05"/>
-          <stop offset="1" stopOpacity="0"/>
-        </linearGradient>
-        <linearGradient id="azure__c" x1="-1027.16" x2="-997.48" y1="147.64" y2="68.56" gradientTransform="matrix(1 0 0 -1 1075 158)" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#3ccbf4"/>
-          <stop offset="1" stopColor="#2892df"/>
-        </linearGradient>
-      </defs>
-      <path fill="url(#azure__a)" d="M33.34 6.54h26.04l-27.03 80.1a4.15 4.15 0 0 1-3.94 2.81H8.15a4.14 4.14 0 0 1-3.93-5.47L29.4 9.38a4.15 4.15 0 0 1 3.94-2.83z"/>
-      <path fill="#0078d4" d="M71.17 60.26H29.88a1.91 1.91 0 0 0-1.3 3.31l26.53 24.76a4.17 4.17 0 0 0 2.85 1.13h23.38z"/>
-      <path fill="url(#azure__b)" d="M33.34 6.54a4.12 4.12 0 0 0-3.95 2.88L4.25 83.92a4.14 4.14 0 0 0 3.91 5.54h20.79a4.44 4.44 0 0 0 3.4-2.9l5.02-14.78 17.91 16.7a4.24 4.24 0 0 0 2.67.97h23.29L71.02 60.26H41.24L59.47 6.55z"/>
-      <path fill="url(#azure__c)" d="M66.6 9.36a4.14 4.14 0 0 0-3.93-2.82H33.65a4.15 4.15 0 0 1 3.93 2.82l25.18 74.62a4.15 4.15 0 0 1-3.93 5.48h29.02a4.15 4.15 0 0 0 3.93-5.48z"/>
     </svg>
   ),
   "AWS EC2": (
@@ -192,8 +117,135 @@ const icons: Record<string, ReactNode> = {
       <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" fill="currentColor"/>
     </svg>
   ),
+  Drizzle: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <g transform="rotate(-20 12 12)" fill="currentColor">
+        <rect x="4.2" y="5.1" width="16" height="2.4" rx="1.2"/>
+        <rect x="8.2" y="9.4" width="14" height="2.4" rx="1.2"/>
+        <rect x="4.2" y="13.7" width="16" height="2.4" rx="1.2"/>
+        <rect x="8.2" y="18" width="11" height="2.4" rx="1.2"/>
+      </g>
+    </svg>
+  ),
+  Zod: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 1.5 21.5 7v10L12 22.5 2.5 17V7L12 1.5zm0 2.3L4.5 8.2v7.6L12 20.2l7.5-4.4V8.2L12 3.8z" fill="currentColor"/>
+      <path d="M8 8.3h8v2L10.9 15H16v2H8v-2l5.1-4.7H8v-2z" fill="currentColor"/>
+    </svg>
+  ),
+  Testing: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16z" fill="currentColor"/>
+      <path d="M10.7 15.6 7.5 12.4l1.4-1.4 1.8 1.8 4.4-4.4 1.4 1.4z" fill="currentColor"/>
+    </svg>
+  ),
+  "GitHub Actions": (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="5" cy="12" r="2.6" fill="currentColor"/>
+      <circle cx="19" cy="6" r="2.6" fill="currentColor"/>
+      <circle cx="19" cy="18" r="2.6" fill="currentColor"/>
+      <path d="M7.2 11.1l9.6-5.4.9 1.6-9.6 5.4z" fill="currentColor"/>
+      <path d="M7.2 12.9l9.6 6 .9-1.5-9.6-6z" fill="currentColor"/>
+    </svg>
+  ),
 };
 
-export function getTechIcon(name: string): ReactNode | null {
+/**
+ * Iconos que dependen de <mask> o <linearGradient> internos.
+ *
+ * Un `id` es unico en todo el documento, y `url(#id)` resuelve SIEMPRE al primer
+ * elemento con ese id en orden de documento. Como el mismo icono se pinta varias
+ * veces (constelacion de Skills + el stack de cada proyecto), unos ids fijos
+ * generarian duplicados y todas las copias quedarian apuntando a la primera —
+ * que puede estar dentro de un drawer oculto con `display: none` y por tanto no
+ * resolver. Por eso cada instancia genera sus propios ids a partir de `uid`.
+ */
+const scopedIcons: Record<string, (uid: string) => ReactNode> = {
+  "Next.js": (uid) => (
+    <svg viewBox="0 0 180 180" aria-hidden="true">
+      <mask height="180" id={`nextjs-mask-${uid}`} maskUnits="userSpaceOnUse" width="180" x="0" y="0" style={{ maskType: "alpha" }}>
+        <circle cx="90" cy="90" fill="black" r="90"/>
+      </mask>
+      <g mask={`url(#nextjs-mask-${uid})`}>
+        <circle cx="90" cy="90" fill="black" r="90"/>
+        <path d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z" fill={`url(#nextjs-paint0-${uid})`}/>
+        <rect fill={`url(#nextjs-paint1-${uid})`} height="72" width="12" x="115" y="54"/>
+      </g>
+      <defs>
+        <linearGradient gradientUnits="userSpaceOnUse" id={`nextjs-paint0-${uid}`} x1="109" x2="144.5" y1="116.5" y2="160.5">
+          <stop stopColor="white"/>
+          <stop offset="1" stopColor="white" stopOpacity="0"/>
+        </linearGradient>
+        <linearGradient gradientUnits="userSpaceOnUse" id={`nextjs-paint1-${uid}`} x1="121" x2="120.799" y1="54" y2="106.875">
+          <stop stopColor="white"/>
+          <stop offset="1" stopColor="white" stopOpacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  ),
+  "Node.js": (uid) => (
+    <svg viewBox="0 0 256 292" aria-hidden="true">
+      <defs>
+        <linearGradient id={`nodejs-a-${uid}`} x1="68.188%" x2="27.823%" y1="17.487%" y2="89.755%">
+          <stop offset="0%" stopColor="#41873F"/>
+          <stop offset="32.88%" stopColor="#418B3D"/>
+          <stop offset="63.52%" stopColor="#419637"/>
+          <stop offset="93.19%" stopColor="#3FA92D"/>
+          <stop offset="100%" stopColor="#3FAE2A"/>
+        </linearGradient>
+        <linearGradient id={`nodejs-c-${uid}`} x1="43.277%" x2="159.245%" y1="55.169%" y2="-18.306%">
+          <stop offset="13.76%" stopColor="#41873F"/>
+          <stop offset="40.32%" stopColor="#54A044"/>
+          <stop offset="71.36%" stopColor="#66B848"/>
+          <stop offset="90.81%" stopColor="#6CC04A"/>
+        </linearGradient>
+        <linearGradient id={`nodejs-f-${uid}`} x1="-4.389%" x2="101.499%" y1="49.997%" y2="49.997%">
+          <stop offset="9.192%" stopColor="#6CC04A"/>
+          <stop offset="28.64%" stopColor="#66B848"/>
+          <stop offset="59.68%" stopColor="#54A044"/>
+          <stop offset="86.24%" stopColor="#41873F"/>
+        </linearGradient>
+      </defs>
+      <path fill={`url(#nodejs-a-${uid})`} d="M134.923 1.832c-4.344-2.443-9.502-2.443-13.846 0L6.787 67.801C2.443 70.244 0 74.859 0 79.745v132.208c0 4.887 2.715 9.502 6.787 11.945l114.29 65.968c4.344 2.444 9.502 2.444 13.846 0l114.29-65.968c4.344-2.443 6.787-7.058 6.787-11.945V79.745c0-4.886-2.715-9.501-6.787-11.944L134.923 1.832Z"/>
+      <path fill={`url(#nodejs-c-${uid})`} d="M249.485 67.8 134.65 1.833c-1.086-.542-2.443-1.085-3.529-1.357L2.443 220.912c1.086 1.357 2.444 2.443 3.8 3.258l114.834 65.968c3.258 1.9 7.059 2.443 10.588 1.357L252.47 70.515c-.815-1.086-1.9-1.9-2.986-2.714Z"/>
+      <path fill={`url(#nodejs-f-${uid})`} d="M249.756 223.898c3.258-1.9 5.701-5.158 6.787-8.687L130.579.204c-3.258-.543-6.787-.272-9.773 1.628L6.786 67.53l122.979 224.238c1.628-.272 3.529-.815 5.158-1.63l114.833-66.239Z"/>
+    </svg>
+  ),
+  Azure: (uid) => (
+    <svg viewBox="0 0 96 96" aria-hidden="true">
+      <defs>
+        <linearGradient id={`azure-a-${uid}`} x1="-1032.17" x2="-1059.21" y1="145.31" y2="65.43" gradientTransform="matrix(1 0 0 -1 1075 158)" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#114a8b"/>
+          <stop offset="1" stopColor="#0669bc"/>
+        </linearGradient>
+        <linearGradient id={`azure-b-${uid}`} x1="-1023.73" x2="-1029.98" y1="108.08" y2="105.97" gradientTransform="matrix(1 0 0 -1 1075 158)" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopOpacity=".3"/>
+          <stop offset=".07" stopOpacity=".2"/>
+          <stop offset=".32" stopOpacity=".1"/>
+          <stop offset=".62" stopOpacity=".05"/>
+          <stop offset="1" stopOpacity="0"/>
+        </linearGradient>
+        <linearGradient id={`azure-c-${uid}`} x1="-1027.16" x2="-997.48" y1="147.64" y2="68.56" gradientTransform="matrix(1 0 0 -1 1075 158)" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#3ccbf4"/>
+          <stop offset="1" stopColor="#2892df"/>
+        </linearGradient>
+      </defs>
+      <path fill={`url(#azure-a-${uid})`} d="M33.34 6.54h26.04l-27.03 80.1a4.15 4.15 0 0 1-3.94 2.81H8.15a4.14 4.14 0 0 1-3.93-5.47L29.4 9.38a4.15 4.15 0 0 1 3.94-2.83z"/>
+      <path fill="#0078d4" d="M71.17 60.26H29.88a1.91 1.91 0 0 0-1.3 3.31l26.53 24.76a4.17 4.17 0 0 0 2.85 1.13h23.38z"/>
+      <path fill={`url(#azure-b-${uid})`} d="M33.34 6.54a4.12 4.12 0 0 0-3.95 2.88L4.25 83.92a4.14 4.14 0 0 0 3.91 5.54h20.79a4.44 4.44 0 0 0 3.4-2.9l5.02-14.78 17.91 16.7a4.24 4.24 0 0 0 2.67.97h23.29L71.02 60.26H41.24L59.47 6.55z"/>
+      <path fill={`url(#azure-c-${uid})`} d="M66.6 9.36a4.14 4.14 0 0 0-3.93-2.82H33.65a4.15 4.15 0 0 1 3.93 2.82l25.18 74.62a4.15 4.15 0 0 1-3.93 5.48h29.02a4.15 4.15 0 0 0 3.93-5.48z"/>
+    </svg>
+  ),
+};
+
+/**
+ * `scope` identifica el lugar donde se pinta el icono (slug del proyecto,
+ * "skills", ...). Es obligatorio: sin el, dos instancias del mismo icono con
+ * mask/gradiente colisionarian. Debe ser unico por cada sitio donde se pinta un
+ * mismo icono y valido como fragmento de id HTML.
+ */
+export function getTechIcon(name: string, scope: string): ReactNode | null {
+  const scoped = scopedIcons[name];
+  if (scoped) return scoped(scope.replace(/[^a-zA-Z0-9_-]/g, "-"));
   return icons[name] ?? null;
 }

@@ -2,6 +2,26 @@ import { Project } from "@/types/project";
 
 export const projects: Project[] = [
   {
+    slug: "visor-bim",
+    category: "Full Stack · BIM",
+    company: "Amarilo S.A.S",
+    role: "Tech Lead",
+    title: "Visor BIM",
+    subtitle: "Autodesk APS",
+    description:
+      "Plataforma web para acceder a los <strong>proyectos BIM</strong> alojados en <strong>Autodesk Construction Cloud</strong> a contratistas externos —modelos 3D, planos y documentación—, sin darles acceso a la nube corporativa. Se construyo end-to-end como monorepo <strong>Next.js 15 + NestJS 11</strong>: visor 3D embebido, navegación y descarga de <strong>cualquier tipo de archivo</strong>, control de acceso <strong>recursivo por carpeta</strong> y sincronización resiliente contra la API de Autodesk. Se resolvio la descarga de modelos <strong>Revit Cloud (C4R)</strong> leyendo: 36 MB de un paquete de 425 MB.",
+    techKeys: ["nextjs", "nestjs", "typescript", "postgresql", "Drizzle", "Zod", "azure", "CI/CD", "Autodesk APS"],
+    links: [],
+    year: "2026",
+    status: { label: "In production", variant: "production" },
+    private: true,
+    metrics: [
+      { value: "3D", label: "Visor en el navegador", color: "#00FFC8" },
+      { value: "0", label: "Secretos de larga vida", color: "#7B61FF" },
+      { value: "19", label: "Suites de test", color: "#00FFC8" },
+    ],
+  },
+  {
     slug: "plataforma-bim",
     category: "Full Stack · BIM",
     company: "Amarilo S.A.S",

@@ -49,13 +49,16 @@ export function ProjectsSection() {
         </div>
 
         <div className={`projects-section__drawer ${isOpen ? "projects-section__drawer--open" : ""}`}>
-          {activeIdx >= 0 && (
+          {projects.map((p, i) => (
             <ProjectDrawer
-              project={projects[activeIdx]}
-              visible={drawerVisible}
+              key={p.slug}
+              project={p}
+              index={i}
+              visible={drawerVisible && activeIdx === i}
+              inactive={activeIdx !== i}
               onClose={close}
             />
-          )}
+          ))}
         </div>
       </div>
     </section>

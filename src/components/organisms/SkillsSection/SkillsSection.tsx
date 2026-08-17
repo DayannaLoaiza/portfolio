@@ -21,7 +21,7 @@ export function SkillsSection() {
             <div className="constellation-zone__glow" />
 
             {category.skills.map((skill, i) => {
-              const icon = getTechIcon(skill.name);
+              const icon = getTechIcon(skill.name, "skills");
               if (!icon) return null;
               return (
                 <LogoChip

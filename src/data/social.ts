@@ -14,12 +14,12 @@ export const terminalLines: TerminalLine[] = [
   { type: "cmd", prompt: "▸", text: "experience" },
   {
     type: "out",
-    text: '<span style="color:#00FFC8;font-weight:600">3+</span> Years of Experience',
+    text: '<span style="color:#00FFC8;font-weight:600">4+</span> Years of Experience',
   },
   { type: "cmd", prompt: "▸", text: "projects" },
   {
     type: "out",
-    text: '<span style="color:#00FFC8;font-weight:600">6+</span> Projects delivered & contributed',
+    text: '<span style="color:#00FFC8;font-weight:600">7+</span> Projects delivered & contributed',
   },
 ];
 

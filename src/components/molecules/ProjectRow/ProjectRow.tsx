@@ -29,12 +29,15 @@ export function ProjectRow({
   const idx = `_0${index + 1}.`;
 
   return (
-    <div className={cls} onClick={onClick}>
+    // `order` solo surte efecto en movil, donde .projects-section__list es
+    // `display: contents` y la fila pasa a ser hijo flex de __body (acordeon).
+    // En escritorio su contenedor es un bloque normal y el navegador lo ignora.
+    <div className={cls} onClick={onClick} style={{ order: index * 2 }}>
       <div className={`project-row__inner ${isOpen ? "project-row__inner--compact" : ""}`}>
         <span className={`project-row__idx ${isOpen ? "project-row__idx--compact" : ""}`}>
           {idx}
         </span>
-        <div>
+        <div className="project-row__body">
           <div className="project-row__title-wrap">
             <span className={`project-row__title ${isOpen ? "project-row__title--compact" : ""}`}>
               {title}

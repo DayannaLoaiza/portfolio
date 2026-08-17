@@ -6,6 +6,11 @@ import "./ProjectDrawer.css";
 interface ProjectDrawerProps {
   project: Project;
   visible: boolean;
+  /** Posicion del proyecto en la lista; ordena el acordeon movil. */
+  index: number;
+  /** Los drawers inactivos se ocultan por CSS en vez de desmontarse, para que
+      su contenido quede en el HTML pre-renderizado y sea indexable. */
+  inactive?: boolean;
   onClose: () => void;
 }
 
@@ -15,9 +20,16 @@ const statusClass: Record<string, string> = {
   "open-source": "project-drawer__status--open-source",
 };
 
-export function ProjectDrawer({ project, visible, onClose }: ProjectDrawerProps) {
+export function ProjectDrawer({ project, visible, index, inactive, onClose }: ProjectDrawerProps) {
+  const className = [
+    "project-drawer__inner",
+    visible ? "project-drawer__inner--visible" : "",
+    inactive ? "project-drawer__inner--inactive" : "",
+  ].filter(Boolean).join(" ");
+
   return (
-    <div className={`project-drawer__inner ${visible ? "project-drawer__inner--visible" : ""}`}>
+    // Impar para intercalarse justo detras de su fila en el acordeon movil.
+    <div className={className} style={{ order: index * 2 + 1 }}>
       <div className="project-drawer__close-row">
         <button
           className="project-drawer__close"
@@ -68,7 +80,7 @@ export function ProjectDrawer({ project, visible, onClose }: ProjectDrawerProps)
       <div className="project-drawer__techs">
         {project.techKeys.map((k) => (
           <span key={k} className="project-drawer__tech">
-            {getTechIcon(techNames[k] ?? k)}
+            {getTechIcon(techNames[k] ?? k, `proj-${project.slug}`)}
             <span>{techNames[k] ?? k}</span>
           </span>
         ))}

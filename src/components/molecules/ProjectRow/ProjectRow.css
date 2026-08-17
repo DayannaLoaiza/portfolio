@@ -194,3 +194,55 @@
 .project-row:hover .project-row__hint {
   color: rgba(0, 255, 200, 0.35);
 }
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .project-row {
+    padding-left: 16px;
+  }
+
+  .project-row__inner {
+    grid-template-columns: 28px 1fr;
+    gap: 0 10px;
+    padding: 14px 14px 14px 0;
+  }
+
+  /* Sin esto la pista `1fr` (= minmax(auto, 1fr)) respeta el ancho min-content
+     del titulo en nowrap y se infla, empujando el año fuera del recorte. */
+  .project-row__body {
+    min-width: 0;
+  }
+
+  .project-row__title-wrap {
+    display: block;
+  }
+
+  .project-row__title {
+    font-size: 20px;
+    white-space: normal;
+    /* El `overflow-wrap: break-word` del reset solo cubre p y h1..h6; el titulo
+       es un <span>, asi que necesita el suyo. */
+    overflow-wrap: anywhere;
+  }
+
+  .project-row__title--compact {
+    font-size: 16px;
+  }
+}
+
+/* En tactil no hay :hover, asi que el barrido nunca se dispara y el titulo se
+   queda en #1c2530 sobre #0d1117 — un contraste de 1,23:1. Se sustituye el
+   texto recortado sobre gradiente por color plano. */
+@media (hover: none) {
+  .project-row:not(.project-row--active) .project-row__title {
+    animation: none;
+    background: none;
+    -webkit-text-fill-color: var(--color-text-secondary);
+  }
+
+  .project-row__idx,
+  .project-row__hint {
+    color: rgba(0, 255, 200, 0.35);
+  }
+}

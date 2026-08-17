@@ -1,4 +1,8 @@
 .photo-hex {
+  /* Unica medida de la que depende toda la geometria del hexagono.
+     El resto se expresa en % del wrap, asi que basta cambiar esto para escalarlo. */
+  --hex-w: 190px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,15 +13,15 @@
 
 .photo-hex__wrap {
   position: relative;
-  width: 190px;
-  height: 210px;
+  width: var(--hex-w);
+  height: calc(var(--hex-w) * 21 / 19); /* 190 -> 210 exacto */
 }
 
 .photo-hex__ring {
   position: absolute;
   inset: 0;
-  width: 190px;
-  height: 210px;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 
@@ -45,10 +49,10 @@
 
 .photo-hex__clip {
   position: absolute;
-  top: 8px;
-  left: 7px;
-  width: 176px;
-  height: 194px;
+  top: 3.81%;    /* 8/210  */
+  left: 3.68%;   /* 7/190  */
+  width: 92.63%; /* 176/190 */
+  height: 92.38%; /* 194/210 */
   clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
   overflow: hidden;
   z-index: 2;
@@ -106,10 +110,11 @@
   opacity: 1;
 }
 
-.photo-hex__corner--tl { top: 11px; left: 13px; border-width: 1.5px 0 0 1.5px; }
-.photo-hex__corner--tr { top: 11px; right: 13px; border-width: 1.5px 1.5px 0 0; }
-.photo-hex__corner--bl { bottom: 11px; left: 13px; border-width: 0 0 1.5px 1.5px; }
-.photo-hex__corner--br { bottom: 11px; right: 13px; border-width: 0 1.5px 1.5px 0; }
+/* top/bottom en % resuelven contra la altura del wrap (11/210), left/right contra el ancho (13/190) */
+.photo-hex__corner--tl { top: 5.24%; left: 6.84%; border-width: 1.5px 0 0 1.5px; }
+.photo-hex__corner--tr { top: 5.24%; right: 6.84%; border-width: 1.5px 1.5px 0 0; }
+.photo-hex__corner--bl { bottom: 5.24%; left: 6.84%; border-width: 0 0 1.5px 1.5px; }
+.photo-hex__corner--br { bottom: 5.24%; right: 6.84%; border-width: 0 1.5px 1.5px 0; }
 
 .photo-hex__info {
   display: flex;
@@ -163,6 +168,12 @@
 
 @media (max-width: 768px) {
   .photo-hex {
+    --hex-w: 140px;
+  }
+
+  /* Repite el <h1> que va justo debajo («Linda Dayanna Loaiza» / «Full Stack
+     Developer»), y ocultarlo recupera el alto que necesitan los CTA. */
+  .photo-hex__info {
     display: none;
   }
 }
