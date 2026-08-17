@@ -33,7 +33,7 @@ export function PhotoHex() {
           <div className="photo-hex__photo">
             <Image
               src="/og-image.webp"
-              alt="Linda Loaiza"
+              alt="Linda Dayanna Loaiza, Software Engineer y Full Stack Developer"
               width={176}
               height={194}
               className="photo-hex__img"

@@ -103,6 +103,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  /* Ahora vive dentro del h1: hay que neutralizar lo que heredaria de el
+     (600, line-height 1.0 y letter-spacing negativo) para no cambiar el aspecto. */
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
 }
 
 .hero-section__role::before {

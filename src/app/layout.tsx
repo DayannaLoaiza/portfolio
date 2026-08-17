@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Inter } from "next/font/google";
-import { getPersonSchema, getWebSiteSchema } from "@/lib/structured-data";
+import {
+  getPersonSchema,
+  getProjectsSchema,
+  getWebSiteSchema,
+} from "@/lib/structured-data";
 import "@/styles/reset.css";
 import "@/styles/tokens.css";
 import "@/styles/global.css";
@@ -23,48 +27,56 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lindaloaiza.com"),
+  // 59 caracteres: por encima de ~60 Google recorta el titulo en resultados.
+  // "Developer" y "Tech Lead" se recuperan en la description y en el JSON-LD.
   title: {
-    default: "Linda Loaiza | Full Stack Developer & Tech Lead",
-    template: "%s | Linda Loaiza",
+    default: "Linda Dayanna Loaiza | Software Engineer · Full Stack · BIM",
+    template: "%s | Linda Dayanna Loaiza",
   },
   description:
-    "Full Stack Developer & Tech Lead desde Bogotá, Colombia. Especializada en React, Next.js, Node.js, TypeScript y arquitectura cloud. Disponible para trabajo remoto.",
+    "Software Engineer y Full Stack Developer. Construyo plataformas web para construcción (BIM · Autodesk APS), logística de última milla y banca. Remoto.",
   keywords: [
+    "Software Engineer",
     "Full Stack Developer",
     "Tech Lead",
     "React Developer",
     "Node.js",
     "TypeScript",
     "Next.js",
+    "BIM",
+    "Autodesk Platform Services",
+    "Forge Viewer",
+    "AEC",
+    "software para construcción",
     "Bogotá",
     "Colombia",
     "Remote Developer",
     "Desarrolladora Full Stack",
   ],
-  authors: [{ name: "Linda Loaiza" }],
-  creator: "Linda Loaiza",
+  authors: [{ name: "Linda Dayanna Loaiza" }],
+  creator: "Linda Dayanna Loaiza",
   openGraph: {
     type: "website",
     locale: "es_CO",
     url: "https://lindaloaiza.com",
-    siteName: "Linda Loaiza — Portfolio",
-    title: "Linda Loaiza | Full Stack Developer & Tech Lead",
+    siteName: "Linda Dayanna Loaiza — Portfolio",
+    title: "Linda Dayanna Loaiza | Software Engineer · Full Stack · BIM",
     description:
-      "Full Stack Developer & Tech Lead desde Bogotá, Colombia. Especializada en React, Next.js, Node.js y arquitectura cloud.",
+      "Software Engineer y Full Stack Developer. Plataformas web para construcción (BIM · Autodesk APS), logística de última milla y banca.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Linda Loaiza — Full Stack Developer & Tech Lead",
+        alt: "Linda Dayanna Loaiza — Software Engineer & Full Stack Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Linda Loaiza | Full Stack Developer & Tech Lead",
+    title: "Linda Dayanna Loaiza | Software Engineer · Full Stack · BIM",
     description:
-      "Full Stack Developer & Tech Lead desde Bogotá, Colombia.",
+      "Software Engineer y Full Stack Developer. Construcción (BIM · Autodesk APS), logística y banca.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -92,7 +104,11 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([getPersonSchema(), getWebSiteSchema()]),
+            __html: JSON.stringify([
+              getPersonSchema(),
+              getWebSiteSchema(),
+              getProjectsSchema(),
+            ]),
           }}
         />
       </head>

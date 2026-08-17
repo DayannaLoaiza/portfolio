@@ -20,12 +20,16 @@ export function HeroSection() {
           </div>
 
           <div className="hero-section__name-block">
+            {/* El rol vive dentro del h1: es la senal on-page de mas peso y
+                antes solo llevaba el nombre. */}
             <h1 className="hero-section__name">
               Linda Dayanna
               <br />
               <span className="hero-section__name-accent">Loaiza.</span>
+              <span className="hero-section__role">
+                Software Engineer &amp; Full Stack Developer
+              </span>
             </h1>
-            <p className="hero-section__role">Full Stack Developer</p>
           </div>
 
           <div className="hero-section__tagline">
